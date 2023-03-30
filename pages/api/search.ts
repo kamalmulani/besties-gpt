@@ -17,7 +17,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
         environment: "us-east1-gcp", 
         apiKey: process.env.PINECONE_API_KEY ?? "",
       });
-      const index = pinecone.Index("besties-gpt");
+      const index = pinecone.Index("chatship");
       const vectorStore = await PineconeStore.fromExistingIndex(
         new OpenAIEmbeddings(), {pineconeIndex: index},
       );
